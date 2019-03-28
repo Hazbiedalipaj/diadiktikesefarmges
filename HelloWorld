@@ -1,0 +1,20 @@
+
+package com.mycompany.hazbiedalipaj;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@EnableAutoConfiguration
+public class HelloWorld {
+
+ @RequestMapping("/")
+ String home(@RequestParam(value="user", required=true , defaultValue="") String user) {
+		return "Hello World " + user +"!";
+	}
+    public static void main(String[] args) {
+        SpringApplication.run(HelloWorld.class, args);
+ 
+    }
+    
+}
